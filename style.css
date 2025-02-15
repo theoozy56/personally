@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none; /* Hide default cursor */
 }
 
 body {
@@ -15,8 +16,10 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
+    overflow: hidden; /* Prevent scrolling */
 }
 
+/* Glowing Text */
 .container {
     animation: fadeIn 2s ease-in-out;
 }
@@ -29,6 +32,22 @@ h1 {
     animation: glow 1.5s infinite alternate, fadeInUp 1.5s forwards;
 }
 
+/* Custom Cursor */
+.cursor {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* Animations */
 @keyframes glow {
     from {
         text-shadow: 0 0 10px #ff2222, 0 0 20px #ff4444, 0 0 30px #ff6666;
